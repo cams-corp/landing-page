@@ -1,0 +1,49 @@
+---
+import TestimonialCard from '../cards/TestimonialCard.astro';
+import { testimonials } from '../../data/testimonials';
+---
+
+<section id="testimonios" class="py-8 bg-beige overflow-hidden">
+  <div class="container mx-auto max-w-6xl px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">
+        Lo que mis clientes están diciendo
+      </h2>
+    </div>
+  </div>
+
+  <div class="relative">
+    <div class="testimonials-scroll flex gap-6">
+      {[...testimonials, ...testimonials].map((testimonial) => (
+        <div class="flex-shrink-0 w-[350px]">
+          <TestimonialCard
+            name={testimonial.name}
+            role={testimonial.role}
+            rating={testimonial.rating}
+            testimonial={testimonial.testimonial}
+            image={testimonial.image}
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .testimonials-scroll {
+    animation: scroll 30s linear infinite;
+  }
+
+  .testimonials-scroll:hover {
+    animation-play-state: paused;
+  }
+</style>

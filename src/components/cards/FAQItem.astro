@@ -1,0 +1,26 @@
+---
+interface Props {
+  question: string;
+  answer: string;
+  class?: string;
+}
+
+const { question, answer, class: className = '' } = Astro.props;
+---
+
+<details class={`bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300 group ${className}`}>
+  <summary class="font-bold text-lg text-gray-900 cursor-pointer list-none flex justify-between items-center">
+    <span>{question}</span>
+    <span class="text-primary text-2xl group-open:rotate-45 transition-transform duration-300">+</span>
+  </summary>
+
+  <div class="mt-4 text-gray-700 leading-relaxed">
+    {answer}
+  </div>
+</details>
+
+<style>
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

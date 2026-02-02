@@ -1,0 +1,43 @@
+---
+interface Props {
+  variant?: 'primary' | 'secondary' | 'ghost';
+  text: string;
+  href?: string;
+  size?: 'sm' | 'md' | 'lg';
+  class?: string;
+}
+
+const {
+  variant = 'primary',
+  text,
+  href = '#contacto',
+  size = 'md',
+  class: className = ''
+} = Astro.props;
+
+const baseStyles = 'inline-block font-bold rounded-lg transition-all duration-300 text-center no-underline cursor-pointer';
+
+const variantStyles = {
+  primary: 'bg-primary text-white hover:bg-blue-700 shadow-lg hover:shadow-xl',
+  secondary: 'border-2 border-primary text-primary bg-white hover:bg-primary hover:text-white',
+  ghost: 'text-primary hover:text-blue-700 hover:bg-gray-100'
+};
+
+const sizeStyles = {
+  sm: 'px-6 py-3 text-base',
+  md: 'px-14 py-6 text-xl',
+  lg: 'px-16 py-7 text-2xl'
+};
+
+const classes = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`;
+---
+
+{href ? (
+  <a href={href} class={classes}>
+    {text}
+  </a>
+) : (
+  <button class={classes}>
+    {text}
+  </button>
+)}

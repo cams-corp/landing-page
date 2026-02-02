@@ -1,0 +1,57 @@
+---
+import { Image } from 'astro:assets';
+import Button from '../common/Button.astro';
+import StatCard from '../common/StatCard.astro';
+---
+
+<section class="bg-gradient-to-br from-blue-50 to-white pt-10">
+  <div class="container mx-auto max-w-6xl px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+      <div class="text-center lg:text-left">
+        <p class="text-lg text-gray-700 font-bold">
+          +600 personas acompañadas
+        </p>
+        <h1 class="text-4xl font-bold text-gray-900 mb-6 leading-tight text-primary">
+          Vuelve a ser un Candidato Atractivo en 30 días con Acompañamiento 1 a 1
+        </h1>
+
+        <p class="text-xl text-gray-700 mb-8">
+          Deja de postularte sin respuestas y empieza a avanzar en procesos reales con un acompañamiento de empleabilidad que te muestra cómo moverte en el mercado laboral, comunicar tu verdadero valor y llegar preparado a entrevistas donde sí te eligen.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+          <Button
+            variant="primary"
+            text="Ver Planes"
+            href="#planes"
+            size="sm"
+          />
+        </div>
+        <p class="text-base text-gray-700 pt-2">
+          Todas las sesiones son personalizadas y online
+        </p>
+      </div>
+
+      <div class="flex justify-center lg:justify-end">
+        <Image
+          src="/images/hero.png"
+          alt="Camila García"
+          class="w-full max-w-md rounded-4xl"
+          width={448}
+          height={600}
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Full-width stats section - outside container -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 bg-tertiary text-secondary p-8 py-4">
+    <div class="container mx-auto max-w-6xl col-span-full">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <StatCard value="+6" label="Años de Experiencia" />
+        <StatCard value="+600" label="Personas Asesoradas" />
+        <StatCard value="+100" label="Workshops de Empleabilidad" />
+      </div>
+    </div>
+  </div>
+</section>

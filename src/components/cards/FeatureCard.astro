@@ -1,0 +1,51 @@
+---
+import { Image } from 'astro:assets';
+import Button from '../common/Button.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+  imageAlt?: string;
+  ctaText: string;
+  ctaHref: string;
+  class?: string;
+}
+
+const { title, description, image, imageAlt = '', ctaText, ctaHref, class: className = '' } = Astro.props;
+---
+
+<div class={`w-full bg-white rounded-lg py-4 md:py-8 px-8 hover:shadow-xl transition-all duration-300 ${className}`}>
+  <div class="flex flex-col md:flex-row items-center gap-8 max-w-6xl mx-auto">
+    <!-- Left side: Content -->
+    <div class="flex-1 flex flex-col justify-center">
+      <h3 class="font-bold text-2xl text-gray-900 mb-4">
+        {title}
+      </h3>
+
+      <p class="text-gray-700 leading-relaxed mb-6">
+        {description}
+      </p>
+
+      <div>
+        <Button
+          text={ctaText}
+          href={ctaHref}
+          variant="primary"
+          size="sm"
+        />
+      </div>
+    </div>
+
+    <!-- Right side: Image -->
+    <div class="flex-1 flex items-center justify-center">
+      <Image
+        src={image}
+        alt={imageAlt}
+        class="w-full h-auto max-w-md rounded-lg"
+        width={448}
+        height={448}
+      />
+    </div>
+  </div>
+</div>

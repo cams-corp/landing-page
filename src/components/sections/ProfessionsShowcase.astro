@@ -1,0 +1,60 @@
+
+---
+import ProfessionCard from '../cards/ProfessionCard.astro';
+import { professions, positions } from '../../data/professionsAndPositions';
+---
+
+<section class="py-8 bg-tertiary text-secondary overflow-hidden">
+  <div class="mb-8">
+    <div class="professions-scroll-right flex gap-6">
+      {[...professions, ...professions, ...professions].map((profession) => (
+        <div class="flex-shrink-0">
+          <ProfessionCard text={profession} />
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div>
+    <div class="professions-scroll-left flex gap-6">
+      {[...positions, ...positions, ...positions].map((position) => (
+        <div class="flex-shrink-0">
+          <ProfessionCard text={position} />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes scrollRight {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-33.333%);
+    }
+  }
+
+  @keyframes scrollLeft {
+    0% {
+      transform: translateX(-33.333%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .professions-scroll-right {
+    animation: scrollRight 40s linear infinite;
+  }
+
+  .professions-scroll-left {
+    animation: scrollLeft 40s linear infinite;
+  }
+
+  .professions-scroll-right:hover,
+  .professions-scroll-left:hover {
+    animation-play-state: paused;
+  }
+</style>

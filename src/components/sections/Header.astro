@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets';
+import Button from '../common/Button.astro';
+import { getWhatsAppUrl } from '../../utils/whatsapp';
+
+const whatsappUrl = getWhatsAppUrl('Hola Camila, me interesan tus planes y quiero agendar una llamada para conocer más');
+---
+
+<header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+  <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+    <div class="flex items-center">
+      <Image
+        src="/images/logo-camila-garcia.svg"
+        alt="Camila García"
+        class="h-14"
+        width={200}
+        height={56}
+      />
+    </div>
+
+    <Button
+      variant="primary"
+      text="Quiero Comenzar"
+      href={whatsappUrl}
+      size="sm"
+    />
+  </nav>
+</header>
+
+<!-- Spacer to prevent content from hiding under fixed header -->
+<div class="h-20"></div>

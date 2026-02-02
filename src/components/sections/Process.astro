@@ -1,0 +1,33 @@
+---
+import ProcessStepCard from '../cards/ProcessStepCard.astro';
+import Button from '../common/Button.astro';
+import { processSteps } from '../../data/processSteps';
+---
+
+<section id="proceso" class="py-10 px-4 bg-white">
+  <div class="container mx-auto max-w-6xl">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">
+        Un proceso simple en 3 pasos para dejar de improvisar y empezar a avanzar con seguridad
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {processSteps.map((step) => (
+        <ProcessStepCard
+          stepNumber={step.stepNumber}
+          title={step.title}
+          description={step.description}
+        />
+      ))}
+    </div>
+
+    <div class="text-center mt-12">
+      <Button
+        text="Ver Planes"
+        variant="primary"
+        href="#planes"
+      />
+    </div>
+  </div>
+</section>

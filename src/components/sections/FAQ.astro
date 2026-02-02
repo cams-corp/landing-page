@@ -1,0 +1,23 @@
+---
+import FAQItem from '../cards/FAQItem.astro';
+import { faqs } from '../../data/faqs';
+---
+
+<section id="faq" class="py-10 px-4 bg-gray-50">
+  <div class="container mx-auto max-w-4xl">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">
+        Preguntas Frecuentes
+      </h2>
+    </div>
+
+    <div class="space-y-4">
+      {faqs.map((faq) => (
+        <FAQItem
+          question={faq.question}
+          answer={faq.answer}
+        />
+      ))}
+    </div>
+  </div>
+</section>

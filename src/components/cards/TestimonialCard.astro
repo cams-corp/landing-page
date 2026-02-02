@@ -1,0 +1,33 @@
+---
+import ProfilePicture from '../common/ProfilePicture.astro';
+
+interface Props {
+  name: string;
+  role: string;
+  rating: number;
+  testimonial: string;
+  image?: string;
+  class?: string;
+}
+
+const { name, role, rating, testimonial, image, class: className = '' } = Astro.props;
+const defaultImage = '/images/default-avatar.jpg';
+---
+
+<div class={`bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 ${className}`}>
+  <div class="flex items-center gap-4 mb-4">
+    <ProfilePicture
+      src={image || defaultImage}
+      alt={name}
+      size="md"
+    />
+    <div>
+      <h3 class="font-bold text-lg text-gray-900">{name}</h3>
+      <p class="text-gray-600 text-sm">{role}</p>
+    </div>
+  </div>
+
+  <p class="text-gray-700 leading-relaxed italic">
+    "{testimonial}"
+  </p>
+</div>

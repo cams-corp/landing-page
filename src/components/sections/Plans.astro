@@ -1,0 +1,29 @@
+---
+import PlanCard from '../cards/PlanCard.astro';
+import { plans } from '../../data/plans';
+---
+
+<section id="planes" class="py-16 px-4 bg-gradient-to-br from-blue-50 to-white">
+  <div class="container mx-auto max-w-7xl">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">
+        Elige el plan que mejor se adapte a Ti
+      </h2>
+      <p class="text-xl text-gray-600">
+        Todos los planes incluyen sesiones personalizadas 1 a 1
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+      {plans.map((plan) => (
+        <PlanCard
+          name={plan.name}
+          price={plan.price}
+          sessions={plan.sessions}
+          recommended={plan.recommended}
+          features={plan.features}
+        />
+      ))}
+    </div>
+  </div>
+</section>

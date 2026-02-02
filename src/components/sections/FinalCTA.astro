@@ -1,0 +1,52 @@
+---
+import { Image } from 'astro:assets';
+import Button from '../common/Button.astro';
+import { getWhatsAppUrl } from '../../utils/whatsapp';
+
+const whatsappUrl = getWhatsAppUrl('Hola Camila, me interesan tus planes y quiero agendar una llamada para conocer más');
+---
+
+<section id="contacto" class="bg-gradient-to-br from-blue-50 to-white py-10">
+  <div class="container mx-auto max-w-6xl px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+      <div class="text-center lg:text-left">
+        <p class="text-lg text-gray-700 font-bold">
+          +6 años de experiencia en recursos humanos
+        </p>
+        <h1 class="text-4xl font-bold text-gray-900 mb-6 leading-tight text-primary">
+          No postergues más el empleo que sí puedes conseguir
+        </h1>
+
+        <p class="text-xl text-gray-700 mb-8">
+          Cada semana sin estrategia es una semana más sin avances reales. Empieza hoy a moverte con claridad y control.
+        </p>
+        <p class="text-xl text-gray-700 mb-8">
+          <span class="text-green-600">✓</span> <strong>Acompañamiento personalizado</strong> para dejar de improvisar y saber exactamente qué hacer <br />
+          <span class="text-green-600">✓</span> <strong>Estrategia alineada al mercado real</strong> para atraer procesos que sí encajan contigo <br />
+          <span class="text-green-600">✓</span> <strong>Preparación que genera resultados</strong> más respuestas, más entrevistas y más confianza <br />
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+          <Button
+            variant="primary"
+            text="Agenda una llamada"
+            href={whatsappUrl}
+          />
+        </div>
+        <p class="text-base text-gray-700 pt-2">
+          El 90% de clientes ha dado una calificación final de 5 a mi asesoría
+        </p>
+      </div>
+
+      <div class="hidden md:flex justify-center lg:justify-end">
+        <Image
+          src="/images/finalcta.png"
+          alt="Camila García"
+          class="w-full rounded-4xl"
+          width={600}
+          height={600}
+        />
+      </div>
+    </div>
+  </div>
+</section>

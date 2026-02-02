@@ -1,0 +1,18 @@
+---
+interface Props {
+  text: string;
+  icon?: string;
+  class?: string;
+}
+
+const { text, icon = '✓', class: className = '' } = Astro.props;
+---
+
+<div class={`flex items-start gap-3 ${className}`}>
+  <span class="text-primary text-2xl font-bold flex-shrink-0">
+    {icon}
+  </span>
+  <p class="text-gray-700 text-lg leading-relaxed">
+    {text}
+  </p>
+</div>
