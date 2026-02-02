@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import Button from '../common/Button.astro';
+import { getWhatsAppUrl } from '../../utils/whatsapp';
 
 interface Props {
   title: string;
@@ -8,11 +9,11 @@ interface Props {
   image: string;
   imageAlt?: string;
   ctaText: string;
-  ctaHref: string;
   class?: string;
 }
 
-const { title, description, image, imageAlt = '', ctaText, ctaHref, class: className = '' } = Astro.props;
+const { title, description, image, imageAlt = '', ctaText, class: className = '' } = Astro.props;
+const whatsappUrl = getWhatsAppUrl('Hola Camila, me interesan tus planes y quiero agendar una llamada para conocer más');
 ---
 
 <div class={`w-full bg-white rounded-lg py-4 md:py-8 px-8 hover:shadow-xl transition-all duration-300 ${className}`}>
@@ -30,7 +31,7 @@ const { title, description, image, imageAlt = '', ctaText, ctaHref, class: class
       <div>
         <Button
           text={ctaText}
-          href={ctaHref}
+          href={whatsappUrl}
           variant="primary"
           size="sm"
         />
