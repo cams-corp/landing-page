@@ -1,44 +1,38 @@
 export const testimonials = [
   {
-    name: "María González",
-    role: "Gerente de Marketing",
-    rating: 5,
-    testimonial: "Trabajar con Camila cambió completamente mi perspectiva profesional. Sus técnicas me ayudaron a conseguir el ascenso que buscaba hace años.",
-    image: "/images/testimonial-1.jpg"
+    name: "Daniel Patiño",
+    role: "Office Manager",
+    testimonial: "Sus consejos y mentoría a la hora de abordar entrevistas de trabajo fue clave. Como persona, mucho más que decir. Una persona cálida, comprensiva y amable. Siempre me sentí en confianza para compartirle mis dudas.",
+    image: "/images/testimonial1.png"
   },
   {
-    name: "Carlos Rodríguez",
-    role: "Director de Ventas",
-    rating: 5,
-    testimonial: "El coaching con Camila me dio las herramientas para liderar mi equipo con confianza. Los resultados fueron inmediatos y sostenibles.",
-    image: "/images/testimonial-2.jpg"
+    name: "Juan José Espejo Castaño",
+    role: "Account Manager",
+    testimonial: "El apoyo que recibí de parte parte de Camila, ayudó a que muchas de las habilidades a la hora de encontrar un empleo se potencializaran.",
+    image: "/images/testimonial4.png"
   },
   {
-    name: "Ana Martínez",
-    role: "Emprendedora",
-    rating: 5,
-    testimonial: "Gracias a Camila, logré claridad en mis objetivos y desarrollé un plan de acción concreto. Mi negocio creció un 150% en 6 meses.",
-    image: "/images/testimonial-3.jpg"
+    name: "Daniel Patiño",
+    role: "Office Manager",
+    testimonial: "Camila fue mi mentora durante mi proceso para encontrar empleo. Es una persona con muy buenos conocimientos en el tema de empleabilidad.",
+    image: "/images/testimonial1.png"
   },
   {
-    name: "Luis Fernández",
-    role: "Ejecutivo Senior",
-    rating: 5,
-    testimonial: "El proceso de coaching me ayudó a superar el síndrome del impostor y a recuperar mi confianza en la toma de decisiones estratégicas.",
-    image: "/images/testimonial-4.jpg"
+    name: "Anderson Castiblanco",
+    role: "Fullstack Engineer",
+    testimonial: "Me ayudó muchísimo a mejorar aspectos de mi hoja de vida y LinkedIn para dar mas visibilidad a mi perfil y ser más atractivo en el mercado.",
+    image: "/images/testimonial2.png"
   },
   {
-    name: "Patricia Silva",
-    role: "Coach Profesional",
-    rating: 5,
-    testimonial: "Camila no solo es una excelente coach, sino también una mentora excepcional. Su metodología es clara, práctica y transformadora.",
-    image: "/images/testimonial-5.jpg"
+    name: "Natalia Barros Alvarado",
+    role: "HR Manager",
+    testimonial: "María Camila es excelente profesional, cuenta con amplia experiencia en procesos de mentoría, Talent Acquistion, empleabilidad, desarrollo y formación de talentos, en compañías Star-ups,",
+    image: "/images/testimonial5.png"
   },
   {
-    name: "Roberto Sánchez",
-    role: "Consultor Independiente",
-    rating: 5,
-    testimonial: "Las sesiones con Camila me dieron estructura y dirección. Pasé de estar estancado a conseguir 3 clientes importantes en solo 2 meses.",
-    image: "/images/testimonial-6.jpg"
+    name: "Pablo Benavides",
+    role: "Gerente Comercial",
+    testimonial: "Camila tiene un alto potencial para sacar lo mejor de las personas, siempre se caracterizó por la empatía y el respeto",
+    image: "/images/testimonial6.png"
   }
 ];

@@ -12,10 +12,16 @@ interface Props {
 
 const { name, role, rating, testimonial, image, class: className = '' } = Astro.props;
 const defaultImage = '/images/default-avatar.jpg';
+const linkedinRecommendationsLink = 'https://www.linkedin.com/in/camilagarcia-talento/details/recommendations/?detailScreenTabIndex=0'
 ---
 
-<div class={`bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 ${className}`}>
-  <div class="flex items-center gap-4 mb-4">
+<a
+  href=`${linkedinRecommendationsLink}`
+  target="_blank"
+  rel="noopener noreferrer"
+  class={`flex flex-col h-64 bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 cursor-pointer ${className}`}
+>
+  <div class="flex items-center gap-4 mb-4 flex-shrink-0">
     <ProfilePicture
       src={image || defaultImage}
       alt={name}
@@ -27,7 +33,7 @@ const defaultImage = '/images/default-avatar.jpg';
     </div>
   </div>
 
-  <p class="text-gray-700 leading-relaxed italic">
+  <p class="text-gray-700 leading-relaxed italic overflow-hidden flex-grow">
     "{testimonial}"
   </p>
-</div>
+</a>
