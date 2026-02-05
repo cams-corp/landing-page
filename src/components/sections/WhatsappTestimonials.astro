@@ -1,41 +1,43 @@
 ---
-import WhatsappTestimonialCard from '../cards/WhatsappTestimonialCard.astro';
-import Button from '../common/Button.astro';
-import { whatsappTestimonials } from '../../data/whatsappTestimonials';
-import { getWhatsAppUrl } from '../../utils/whatsapp';
+import WhatsappTestimonialCard from "../cards/WhatsappTestimonialCard.astro";
+import Button from "../common/Button.astro";
+import { whatsappTestimonials } from "../../data/whatsappTestimonials";
+import { getWhatsAppUrl } from "../../utils/whatsapp";
 
-const whatsappUrl = getWhatsAppUrl('Hola Camila, me interesan tus planes y quiero agendar una llamada para conocer más');
+const whatsappUrl = getWhatsAppUrl(
+  "Hola Camila, me interesan tus planes y quiero agendar una llamada para conocer más"
+);
 ---
 
 <section id="testimonios-whatsapp" class="py-16 bg-beige overflow-hidden">
   <div class="container mx-auto max-w-6xl px-4">
     <div class="text-center mb-12">
       <h2 class="text-3xl font-bold text-gray-900 mb-4">
-        Lo que me dicen mis clientes
+        La razón por la que hago mi trabajo
       </h2>
     </div>
   </div>
 
   <div class="relative">
-    <div class="whatsapp-testimonials-scroll flex gap-6">
-      {[...whatsappTestimonials, ...whatsappTestimonials].map((testimonial) => (
-        <div class="flex-shrink-0 w-[280px]">
-          <WhatsappTestimonialCard
-            image={testimonial.image}
-            alt={testimonial.alt}
-          />
-        </div>
-      ))}
+    <div class="whatsapp-testimonials-scroll flex gap-6 items-center">
+      {
+        [...whatsappTestimonials, ...whatsappTestimonials].map(
+          (testimonial) => (
+            <div class="shrink-0 w-[280px]">
+              <WhatsappTestimonialCard
+                image={testimonial.image}
+                alt={testimonial.alt}
+              />
+            </div>
+          )
+        )
+      }
     </div>
   </div>
 
   <div class="container mx-auto max-w-6xl px-4 mt-12">
     <div class="text-center">
-      <Button
-        text="Agenda una llamada"
-        variant="primary"
-        href={whatsappUrl}
-      />
+      <Button text="Agenda una llamada" variant="primary" href={whatsappUrl} />
     </div>
   </div>
 </section>

@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
 interface Props {
   image: string;
@@ -7,10 +7,12 @@ interface Props {
   class?: string;
 }
 
-const { image, alt, class: className = '' } = Astro.props;
+const { image, alt, class: className = "" } = Astro.props;
 ---
 
-<div class={`bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 ${className}`}>
+<div
+  class={`bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 ${className}`}
+>
   <Image
     src={image}
     alt={alt}
