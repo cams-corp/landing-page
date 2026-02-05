@@ -19,18 +19,20 @@ const whatsappUrl = getWhatsAppUrl(
   </div>
 
   <div class="relative">
-    <div class="whatsapp-testimonials-scroll flex gap-6 items-center">
+    <div class="whatsapp-testimonials-scroll flex gap-4 items-center">
       {
-        [...whatsappTestimonials, ...whatsappTestimonials].map(
-          (testimonial) => (
-            <div class="shrink-0 w-[280px]">
-              <WhatsappTestimonialCard
-                image={testimonial.image}
-                alt={testimonial.alt}
-              />
-            </div>
-          )
-        )
+        [
+          ...whatsappTestimonials,
+          ...whatsappTestimonials,
+          ...whatsappTestimonials,
+        ].map((testimonial) => (
+          <div class="shrink-0 w-[280px]">
+            <WhatsappTestimonialCard
+              image={testimonial.image}
+              alt={testimonial.alt}
+            />
+          </div>
+        ))
       }
     </div>
   </div>
@@ -53,7 +55,7 @@ const whatsappUrl = getWhatsAppUrl(
   }
 
   .whatsapp-testimonials-scroll {
-    animation: scroll 40s linear infinite;
+    animation: scroll 10s linear infinite;
   }
 
   .whatsapp-testimonials-scroll:hover {

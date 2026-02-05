@@ -1,6 +1,6 @@
 ---
-import TestimonialCard from '../cards/TestimonialCard.astro';
-import { testimonials } from '../../data/testimonials';
+import TestimonialCard from "../cards/TestimonialCard.astro";
+import { testimonials } from "../../data/testimonials";
 ---
 
 <section id="testimonios" class="py-8 bg-beige overflow-hidden">
@@ -14,17 +14,20 @@ import { testimonials } from '../../data/testimonials';
 
   <div class="relative">
     <div class="testimonials-scroll flex gap-6">
-      {[...testimonials, ...testimonials].map((testimonial) => (
-        <div class="flex-shrink-0 w-[350px]">
-          <TestimonialCard
-            name={testimonial.name}
-            role={testimonial.role}
-            rating={testimonial.rating}
-            testimonial={testimonial.testimonial}
-            image={testimonial.image}
-          />
-        </div>
-      ))}
+      {
+        [...testimonials, ...testimonials, ...testimonials].map(
+          (testimonial) => (
+            <div class="shrink-0 w-[350px]">
+              <TestimonialCard
+                name={testimonial.name}
+                role={testimonial.role}
+                testimonial={testimonial.testimonial}
+                image={testimonial.image}
+              />
+            </div>
+          )
+        )
+      }
     </div>
   </div>
 </section>
@@ -40,7 +43,7 @@ import { testimonials } from '../../data/testimonials';
   }
 
   .testimonials-scroll {
-    animation: scroll 30s linear infinite;
+    animation: scroll 10s linear infinite;
   }
 
   .testimonials-scroll:hover {
